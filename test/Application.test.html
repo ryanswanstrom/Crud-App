@@ -1,0 +1,20 @@
+*{ You can use plain selenium command using the selenium tag }*
+
+#{selenium}
+    // Open the home page, and check that no error occured
+    open('/')
+    assertNotTitle('Application error')
+#{/selenium}
+
+
+#{selenium}
+    // Open the admin page
+    open('/admin')
+    assertNotTitle('Application error')
+    assertTextPresent('Administration')
+    assertTextPresent('Storys')
+    assertTextPresent('Sentences')
+    assertTextNotPresent('SomethingCrazy')
+
+    clickAndWait('link=Sentences')
+#{/selenium}
